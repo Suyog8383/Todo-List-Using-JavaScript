@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Add Todo List</h2>
+    <input id="input" type="text" placeholder="Title..." />
+    <button onclick="inputHandle()">Add</button>
+    <ul id="idList"></ul>
+    <script src="script.js"></script>
+  </body>
+</html>
+<script>
+  const inputData = document.getElementById("input");
+  function inputHandle() {
+    const ulList = document.getElementById("idList");
+    const newElm = document.createElement("li");
+    newElm.textContent = inputData.value;
+    const btnEdit = document.createElement("button");
+    btnEdit.textContent = "Edit";
+    newElm.appendChild(btnEdit);
+    const btnDelete = document.createElement("button");
+    btnDelete.textContent = "Delete";
+    newElm.appendChild(btnDelete);
+    ulList.appendChild(newElm);
+  }
+</script>
